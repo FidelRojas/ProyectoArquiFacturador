@@ -21,8 +21,7 @@ export class FacturacionService {
   constructor(protected http: HttpClient) { }
 
   getFactura(telefono: string, mes: string) {
-    var body = { 'telefono': telefono, 'mes': mes };
-    return this.http.post('http://localhost:1010/facturar/', body, httpOptions);
+    return this.http.get('http://localhost:4567/facturar/'+telefono+'/'+mes);
   }
 
 

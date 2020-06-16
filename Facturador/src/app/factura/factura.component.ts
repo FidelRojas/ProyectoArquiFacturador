@@ -11,7 +11,8 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./factura.component.css']
 })
 export class FacturaComponent implements OnInit {
-  registroDeFacturas:RegistroFactura[]=[];
+  registroDeFacturas=[];
+  registroDeFacturasBien:RegistroFactura[]=[];
   costo:string;
   constructor(private facturacionService:FacturacionService,private router:Router) { }
   numero = "";
@@ -20,25 +21,16 @@ export class FacturaComponent implements OnInit {
   nit = "";
   ngOnInit(): void {
     this.registroDeFacturas=this.facturacionService.registroDeFacturas;
+    this.registroDeFacturas.forEach(element => {
+      let obj = JSON.parse(element);
+      this.registroDeFacturasBien.push(obj);
+    });
+
     this.numero=this.facturacionService.numero;
     this.nit=this.facturacionService.nit;
     this.nombre=this.facturacionService.nombre;
     this.costo=this.facturacionService.costo;
     this.mes=this.facturacionService.mes;
-
-
-    var a:RegistroFactura=new RegistroFactura;
-    a.costo="10.12";
-    a.fecha="12/12/12";
-    a.hora="12:12";
-    a.telefonoDestino="74565231";
-    a.tiempoDuracionSegundo="10";
-    this.registroDeFacturas.push(a);
-    this.registroDeFacturas.push(a);
-    this.registroDeFacturas.push(a);
-
-    this.costo="1423";
-
 
   }
 

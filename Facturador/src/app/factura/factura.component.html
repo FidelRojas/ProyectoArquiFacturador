@@ -45,12 +45,12 @@
                             <th class="text-right">Fecha</th>
                             <th class="text-right">Hora</th>
                             <th class="text-left">Telefono Destino</th>
-                            <th class="text-right">Duracion</th>
+                            <th class="text-right">Duracion (Segundos) </th>
                             <th class="text-right">Costo</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let r of registroDeFacturas; let i = index">
+                        <tr *ngFor="let r of registroDeFacturasBien; let i = index">
                             <td class="no">{{i}}</td>
                             <td class="text-left"> {{r.fecha}}</td>
                             <td class="unit">{{r.hora}}</td>

@@ -23,8 +23,11 @@ export class HomeComponent implements OnInit {
     console.log(this.numero, this.mes);
 
     this.facturacionService.getFactura(this.numero, this.mes).subscribe(res => {
-      this.facturacionService.registroDeFacturas = res["registros"];
-      this.facturacionService.costo = res["total"];
+      console.log(res);
+      
+      this.facturacionService.registroDeFacturas = res["lista"];
+      this.facturacionService.costo = res["suma"];
+      console.log(res["suma"]);
       this.facturacionService.nombre = this.nombre;
       this.facturacionService.nit = this.nit;
       this.facturacionService.numero = this.numero;
