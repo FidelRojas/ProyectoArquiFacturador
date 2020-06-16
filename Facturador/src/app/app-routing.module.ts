@@ -9,7 +9,7 @@ const routes: Routes = [
     path:"",component:HomeComponent
   },
   {
-    path:"factura/:id",component:FacturaComponent
+    path:"factura",component:FacturaComponent
   }
 ];
 

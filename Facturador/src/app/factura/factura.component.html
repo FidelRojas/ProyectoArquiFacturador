@@ -1,1 +1,95 @@
-<p>factura works!</p>
+<div id="invoice">
+
+    <div class="toolbar hidden-print">
+        <div class="text-right">
+            <button id="printInvoice" class="btn btn-info"  (click)="captureScreen()"><i class="fa fa-print"></i> Exportar como PDF </button>
+            <!-- <button class="btn btn-info"><i class="fa fa-file-pdf-o" (click)="generatePdf()"></i> Exportar como PDF</button> -->
+        </div>
+        <hr>
+    </div>
+    <div class="invoice overflow-auto" id="contentToConvert">
+        <div style="min-width: 600px">
+            <header>
+                <div class="row">
+                    <div class="col">
+                        <a target="_blank" >
+                            <img src="../../assets/logo.png" data-holder-rendered="true" />
+                            </a>
+                    </div>
+                    <div class="col company-details">
+                        <h2 class="name">
+                            <a target="_blank">
+                            
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="row contacts">
+                    <div class="col invoice-to">
+                        <div class="text-gray-light">Nombre:</div>
+                        <h2 class="to">{{nombre}}</h2>
+                        <div class="address">Nit: {{nit}}</div>
+                        <div class="address">Numro de factura: {{numero}}</div>
+
+                    </div>
+                    <div class="col invoice-details">
+                        <h1 class="invoice-id">Linea: {{numero}}</h1>
+                    </div>
+                </div>
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="text-right">Fecha</th>
+                            <th class="text-right">Hora</th>
+                            <th class="text-left">Telefono Destino</th>
+                            <th class="text-right">Duracion</th>
+                            <th class="text-right">Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of registroDeFacturas; let i = index">
+                            <td class="no">{{i}}</td>
+                            <td class="text-left"> {{r.fecha}}</td>
+                            <td class="unit">{{r.hora}}</td>
+                            <td class="qty">{{r.telefonoDestino}}</td>
+                            <td class="unit">{{r.tiempoDuracionSegundo}}</td>
+                            <td class="total">{{r.costo}}</td>
+
+                        </tr>
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">SUBTOTAL</td>
+                            <td>Bs. {{costo}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">DESCUENTOS</td>
+                            <td>Bs. 00.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">TOTAL</td>
+                            <td>Bs. {{costo}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="thanks">Gracias por su preferencia</div>
+                <div class="notices">
+                    <div>Codigo de control:</div>
+                    <div class="notice">A3-C5-61-3B-A0</div>
+                </div>
+            </main>
+            <footer>
+                Proivida la reproduccion total o parcial.
+            </footer>
+        </div>
+        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+        <div></div>
+    </div>
+</div>

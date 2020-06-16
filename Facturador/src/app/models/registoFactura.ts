@@ -1,5 +1,4 @@
-export class Usuario{
-    telefonoOrigen:string;
+export class RegistroFactura{
     telefonoDestino:string;
     fecha:string;
     hora:string;
