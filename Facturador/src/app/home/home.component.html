@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <h1 style="text-align: center;"> <b> Sistema de Facturacion de Viva</b></h1>
+                <div class="card-body">
+                    <h2 class="title">Generar Factura</h2>
+                    <!-- <div class="input-group">
+                            <input class="input--style-1" type="text" placeholder="NAME" name="name">
+                        </div> -->
+
+                    <form class="form" (ngSubmit)="onSubmit()">
+                        <input type="number" name="numero" [(ngModel)]="numero" placeholder="Numero de telefono">
+                        <label for="cars">Seleccione un Mes:</label>
+
+                        <select name="cars" id="cars"  [(ngModel)]="mes">
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Junio</option>
+                            <option value="Julio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+
+                        </select>
+                        <input type="submit" value="Generar" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+
+    <!-- Main JS-->
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
