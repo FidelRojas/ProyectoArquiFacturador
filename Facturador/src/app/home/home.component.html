@@ -32,7 +32,7 @@
                         </div> -->
 
                     <form class="form" (ngSubmit)="onSubmit()">
-                        <input type="number" name="numero" [(ngModel)]="numero" placeholder="Numero de telefono"><br>
+                        <input type="number" name="numero" [(ngModel)]="numero" placeholder="Numero de telefono">*<br>
                         <input type="text" name="nombre" [(ngModel)]="nombre" placeholder="Nombre"><br>
                         <input type="text" name="nit" [(ngModel)]="nit" placeholder="Nit o Ci">
 
@@ -57,6 +57,7 @@
                         
                         </p>
                         <input type="submit" value="Generar" class="btn">
+                        <div style="color: red;">{{error}}</div>
                     </form>
                 </div>
             </div>
